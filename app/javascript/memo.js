@@ -1,4 +1,4 @@
-function memo(){
+function memo () {
   const submit = document.getElementById("submit");
   submit.addEventListener("click", (e) => {
     const formData = new FormData(document.getElementById("form"));
@@ -15,19 +15,18 @@ function memo(){
       const list = document.getElementById("list");
       const formText = document.getElementById("content");
       const HTML = `
-        <div class="post" data-id=${item.id}>
-          <div class="post-date">
-            投稿日時：${item.created_at}
-          </div>
-          <div class="post-content">
-          ${item.content}
-          </div>
-        </div>`;
+       <div class="post" data-id=${item.id}>
+         <div class="post-date">
+           投稿日時：${item.created_at}
+         </div>
+         <div class="post-content">
+         ${item.content}
+         </div>
+       </div>`;
       list.insertAdjacentHTML("afterend", HTML);
       formText.value = "";
     };
     e.preventDefault();
   });
 }
-
-addEventListener("load", memo)
+window.addEventListener("load", memo)
